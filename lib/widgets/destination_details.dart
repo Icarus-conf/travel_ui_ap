@@ -128,13 +128,6 @@ class DestinationDetails extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
-                        boxShadow: const [
-                          BoxShadow(
-                            color: Colors.black26,
-                            offset: Offset(0.0, 3.0),
-                            blurRadius: 3.0,
-                          ),
-                        ],
                       ),
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(100, 10, 20, 10),
