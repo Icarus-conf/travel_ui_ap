@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/screens/home_screen.dart';
+import 'package:travel_app/widgets/destination_details.dart';
+import 'package:travel_app/widgets/destination_slider.dart';
 
 void main() => runApp(const MyApp());
 
@@ -16,7 +18,12 @@ class MyApp extends StatelessWidget {
         primaryColor: const Color(0xFF3EBACE),
         scaffoldBackgroundColor: const Color(0xFFF3F5F7),
       ),
-      home: const HomeScreen(),
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        DestinationSlider.routeName: (context) => DestinationSlider(),
+        DestinationDetails.routeName: (context) => DestinationDetails(),
+      },
     );
   }
 }
