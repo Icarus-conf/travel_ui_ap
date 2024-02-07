@@ -43,16 +43,32 @@ class HotelSlider extends StatelessWidget {
                   padding: const EdgeInsets.all(12.0),
                   child: Column(
                     children: [
-                      ClipRRect(
-                        borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(20),
-                          topRight: Radius.circular(20),
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black12,
+                              offset: Offset(0, 2),
+                              blurRadius: 6,
+                            ),
+                          ],
                         ),
-                        child: Image(
-                          height: 150,
-                          width: 180,
-                          image: AssetImage(hotel.imageUrl!),
-                          fit: BoxFit.cover,
+                        child: ClipRRect(
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(20),
+                            topRight: Radius.circular(20),
+                          ),
+                          child: Image(
+                            height: 150,
+                            width: 180,
+                            image: AssetImage(hotel.imageUrl!),
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       Container(
@@ -67,8 +83,8 @@ class HotelSlider extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black12,
-                              offset: Offset(0, 0.2),
-                              blurRadius: 1,
+                              offset: Offset(0, 2),
+                              blurRadius: 6,
                             ),
                           ],
                         ),
