@@ -112,7 +112,7 @@ class DestinationDetails extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: 10,
                 bottom: 15,
               ),
@@ -122,7 +122,7 @@ class DestinationDetails extends StatelessWidget {
                 return Stack(
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(40, 5, 20, 5),
+                      margin: const EdgeInsets.fromLTRB(40, 5, 20, 5),
                       height: 170,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -156,7 +156,7 @@ class DestinationDetails extends StatelessWidget {
                                       fontS: 18,
                                       fontWeight: FontWeight.w600,
                                     ),
-                                    PoppinsText(
+                                    const PoppinsText(
                                       text: 'per pax',
                                       color: Colors.grey,
                                     ),
@@ -169,36 +169,36 @@ class DestinationDetails extends StatelessWidget {
                               color: Colors.grey,
                             ),
                             _buildRatingStars(5),
-                            SizedBox(
+                            const SizedBox(
                               height: 10,
                             ),
                             Row(
                               children: [
                                 Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.all(5),
+                                  padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                     color: Colors.blueAccent,
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: Text(
                                     activity.startTimes![0],
-                                    style: TextStyle(color: Colors.white),
+                                    style: const TextStyle(color: Colors.white),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Container(
                                   alignment: Alignment.center,
-                                  padding: EdgeInsets.all(5),
+                                  padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                     color: Colors.blueAccent,
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                   child: Text(
                                     activity.startTimes![1],
-                                    style: TextStyle(color: Colors.white),
+                                    style: const TextStyle(color: Colors.white),
                                   ),
                                 ),
                               ],

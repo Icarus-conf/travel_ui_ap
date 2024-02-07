@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: HomeScreen.routeName,
       routes: {
-        HomeScreen.routeName: (context) => HomeScreen(),
-        DestinationSlider.routeName: (context) => DestinationSlider(),
-        DestinationDetails.routeName: (context) => DestinationDetails(),
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        DestinationSlider.routeName: (context) => const DestinationSlider(),
+        DestinationDetails.routeName: (context) => const DestinationDetails(),
       },
     );
   }
