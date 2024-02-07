@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:travel_app/components/text_format.dart';
+import 'package:travel_app/models/activity_model.dart';
 import 'package:travel_app/models/destination_model.dart';
 
 class DestinationDetails extends StatelessWidget {
   static const String routeName = 'DestinationDetails';
   const DestinationDetails({super.key});
+
+  Text _buildRatingStars(int rating) {
+    String stars = '';
+    for (int i = 0; i < rating; i++) {
+      stars += '⭐';
+    }
+    stars.trim();
+    return Text(stars);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +109,121 @@ class DestinationDetails extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.only(
+                top: 10,
+                bottom: 15,
+              ),
+              itemCount: activities.length,
+              itemBuilder: (context, index) {
+                Activity activity = activities[index];
+                return Stack(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.fromLTRB(40, 5, 20, 5),
+                      height: 170,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(100, 10, 20, 10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  width: 120,
+                                  child: PoppinsText(
+                                    text: activity.name!,
+                                    fontS: 18,
+                                    fontWeight: FontWeight.w600,
+                                    maxLines: 2,
+                                    textOverflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                                Column(
+                                  children: [
+                                    PoppinsText(
+                                      text: '\$${activity.price!}',
+                                      fontS: 18,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    PoppinsText(
+                                      text: 'per pax',
+                                      color: Colors.grey,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            PoppinsText(
+                              text: activity.type!,
+                              color: Colors.grey,
+                            ),
+                            _buildRatingStars(5),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blueAccent,
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Text(
+                                    activity.startTimes![0],
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Container(
+                                  alignment: Alignment.center,
+                                  padding: EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blueAccent,
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Text(
+                                    activity.startTimes![1],
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 20,
+                      left: 15,
+                      bottom: 15,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(25),
+                        child: Image.asset(
+                          activity.imageUrl!,
+                          width: 100,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
           ),
         ],
       ),
