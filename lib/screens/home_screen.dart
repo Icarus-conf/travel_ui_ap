@@ -4,6 +4,8 @@ import 'package:travel_app/components/text_format.dart';
 import 'package:travel_app/widgets/destination_slider.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -26,15 +28,15 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       },
       child: Container(
-        padding: EdgeInsets.all(12),
-        margin: EdgeInsets.only(right: 25),
+        padding: const EdgeInsets.all(12),
+        margin: const EdgeInsets.only(right: 25),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
-          color: _selectedIndex == index ? Colors.blueGrey : Color(0xFFE7EBEE),
+          color: _selectedIndex == index ? Colors.blueGrey : const Color(0xFFE7EBEE),
         ),
         child: Icon(
           _icons[index],
-          color: _selectedIndex == index ? Colors.white : Color(0xFFB4C1C4),
+          color: _selectedIndex == index ? Colors.white : const Color(0xFFB4C1C4),
         ),
       ),
     );
@@ -46,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
+            const Padding(
+              padding: EdgeInsets.symmetric(
                 horizontal: 25,
                 vertical: 25,
               ),
@@ -66,10 +68,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   .map((MapEntry map) => _buildIcon(map.key))
                   .toList(),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
-            DestinationSlider(),
+            const DestinationSlider(),
           ],
         ),
       ),

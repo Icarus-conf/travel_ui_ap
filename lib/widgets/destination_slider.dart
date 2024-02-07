@@ -11,13 +11,13 @@ class DestinationSlider extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(
+          padding: const EdgeInsets.symmetric(
             horizontal: 20,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              PoppinsText(
+              const PoppinsText(
                 text: 'Top Destinations',
                 fontS: 22,
                 fontWeight: FontWeight.bold,
@@ -25,7 +25,7 @@ class DestinationSlider extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {},
-                child: PoppinsText(
+                child: const PoppinsText(
                   text: 'See All',
                   color: Colors.blueGrey,
                 ),
@@ -33,7 +33,7 @@ class DestinationSlider extends StatelessWidget {
             ],
           ),
         ),
-        Container(
+        SizedBox(
           height: 300,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -41,7 +41,7 @@ class DestinationSlider extends StatelessWidget {
             itemBuilder: (context, index) {
               Destination destination = destinations[index];
               return Container(
-                margin: EdgeInsets.all(12),
+                margin: const EdgeInsets.all(12),
                 height: 210,
                 child: Stack(
                   alignment: AlignmentDirectional.topCenter,
@@ -80,7 +80,7 @@ class DestinationSlider extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
+                        boxShadow: const [
                           BoxShadow(
                             color: Colors.black26,
                             offset: Offset(0.0, 2.0),
@@ -107,19 +107,19 @@ class DestinationSlider extends StatelessWidget {
                               children: [
                                 PoppinsText(
                                   text: destination.city!,
-                                  fontS: 24,
+                                  fontS: 20,
                                   fontWeight: FontWeight.w600,
                                   letterSpacing: 1.2,
                                   color: Colors.white,
                                 ),
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       FontAwesomeIcons.locationArrow,
                                       size: 10,
                                       color: Colors.white,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 5,
                                     ),
                                     PoppinsText(
